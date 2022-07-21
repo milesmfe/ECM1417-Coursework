@@ -15,8 +15,14 @@ li a {
     font-family: Belinsky;
     font-weight: bold;
     font-size: 12px;
+    text-decoration:none;
+    color:white;
 }
 
-li a:hover:not(.current), li a.current {
-    border-radius: 5px;
+li a:hover:not(.current) {
+    background:skyblue;
+}
+
+li a.current {
+    text-decoration:underline;
 }

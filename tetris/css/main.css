@@ -30,5 +30,10 @@ li a.current {
 }
 
 div#main {
+    height:100%;
+    align-items: center;
     background-image: url('../images/tetris.png');
+    background-size: 90%;
+    background-position:center, center;
+    background-repeat:no-repeat;
 }

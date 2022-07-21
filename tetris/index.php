@@ -3,6 +3,21 @@
 	<head>
 		<title>Tetris Homepage</title>
 		<link rel="stylesheet" media="screen" href = "css/main.css">
+
+	<?php
+
+	require_once "config.php";
+
+	$sql = "INSERT INTO Users VALUES ('unTest', 'fnTest', 'lnTest', 'pwTest', 1)";
+
+	if (mysqli_query($conn, $sql)) {
+		echo "New user successfully created.";
+	} else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+	?>
+
 	</head>
 	<body>
 		<ul>

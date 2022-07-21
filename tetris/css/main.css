@@ -20,7 +20,8 @@ li a {
 }
 
 li a:hover:not(.current) {
-    background:skyblue;
+    background:palegreen;
+    color:black;
 }
 
 li a.current {
@@ -28,7 +29,7 @@ li a.current {
 }
 
 div.main {
-    background-image: url(../images/tetris.png);
+    background-image: url(tetris.png);
     background-size: 95% auto;
     background-attachment: fixed;
     background-position: center center;

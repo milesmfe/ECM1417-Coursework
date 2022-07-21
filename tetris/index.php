@@ -6,7 +6,7 @@
 
 	<?php
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["auth_test"])) {
 		$auth_test = $_POST['auth_test'];
 		if ($auth_test == "logout") {
 			$_SESSION["auth"] = false;
@@ -29,12 +29,12 @@
 			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged in -->
 				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
-				<input type="submit" value="logout">
+				<input type="submit" name="auth_test" value="logout">
 			</div>
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
 				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
-				<input type="submit" value="login">
+				<input type="submit" name="auth_test" value="login">
 			</div>
 		</div>
 	</body>

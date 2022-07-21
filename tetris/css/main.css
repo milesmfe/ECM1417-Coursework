@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 ul {
     background-color: blue;
     top: 0;
@@ -31,7 +35,6 @@ li a.current {
 
 div#main {
     height:100%;
-    align-items: center;
     background-image: url('../images/tetris.png');
     background-size: 90%;
     background-position:center, center;

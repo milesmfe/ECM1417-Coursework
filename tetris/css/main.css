@@ -17,10 +17,6 @@ li a {
     font-size: 12px;
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-li a.active {
-    background-color: #04AA6D;
+li a:hover:not(.current), li a.current {
+    border-radius: 5px;
 }

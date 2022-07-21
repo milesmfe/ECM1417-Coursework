@@ -3,18 +3,6 @@
 	<head>
 		<title>Tetris Homepage</title>
 		<link rel="stylesheet" media="screen" href = "css/main.css">
-
-		<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			$name = $_POST["fname"];
-			if (empty($name)) {
-				echo "Name is empty";
-			} else {
-				echo $name;
-			}
-		}
-		?>
-
 	</head>
 	<body>
 		<ul>
@@ -22,11 +10,6 @@
 			<li name="tetris" style="float:right"><a href="tetris.php">Play Tetris</a></li>
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
-		<div id="main">
-			<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-			<label for="fname">First Name: </label><br>
-			<input type="text" id="fname" name="fname" value="First Name"><br>
-			</form>
-		</div>
+		<div id="main"></div>
 	</body>
 </html>

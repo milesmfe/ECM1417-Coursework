@@ -25,12 +25,12 @@ li a {
 }
 
 li a:hover:not(.current) {
-    background:palegreen;
-    color:black;
+    background:darkslategrey;
 }
 
 li a.current {
-    text-decoration:underline;
+    background:palegreen;
+    color:black;
 }
 
 div#main {

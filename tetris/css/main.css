@@ -34,7 +34,7 @@ li a.current {
 }
 
 div#main {
-    height:auto;
+    height:100%;
     background-image: url('../images/tetris.png');
     background-size: 90% contain;
     background-position:center, center;

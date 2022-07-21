@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Tetris Homepage</title>
-		<link rel="stylesheet" href = "css/main.css">
+		<link rel="stylesheet" media="screen" href = "css/main.css">
 	</head>
 	<body>
 		<ul>

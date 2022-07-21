@@ -11,20 +11,6 @@
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
 		<div id="main">
-			<p>
-				asdfasdfa
-				addslashesfasd
-				ftp_allocsdf
-				asdfasdfaasasdfasd
-				asdfasdfaasdfasdf
-				asdfasdfaasdfasdfasdf
-				addslashesasdf
-				asdf
-				asdf
-				asdf
-				asdf
-				sdf
-			</p>
 		</div>
 	</body>
 </html>

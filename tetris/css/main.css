@@ -29,7 +29,7 @@ li a.current {
 }
 
 div.main {
-    background-image: url(tetris.png);
+    background-image: url("tetris.png");
     background-size: 95% auto;
     background-attachment: fixed;
     background-position: center center;

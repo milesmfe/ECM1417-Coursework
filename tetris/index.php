@@ -5,17 +5,9 @@
 		<link rel="stylesheet" media="screen" href = "css/main.css">
 
 	<?php
-
-	if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["auth_test"])) {
-		$auth_test = $_POST['auth_test'];
-		if ($auth_test == "logout") {
-			$_SESSION["auth"] = false;
-		} 
-		if ($auth_test == "login") {
-			$_SESSION["auth"] = true;
-		}
-	  }
 	
+	$_SERVER["auth"] = true;
+
 	?>
 
 	</head>
@@ -26,15 +18,11 @@
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
 		<div id="main">
-			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
+			<div class="landing" <?php if ($_SERVER['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged in -->
-				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
-				<input type="submit" name="auth_test" value="logout">
 			</div>
-			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
+			<div class="landing" <?php if (!$_SERVER['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
-				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
-				<input type="submit" name="auth_test" value="login">
 			</div>
 		</div>
 	</body>

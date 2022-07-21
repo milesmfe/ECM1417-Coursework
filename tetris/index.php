@@ -28,12 +28,12 @@
 		<div id="main">
 			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged in -->
-				<form action="<? echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
+				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
 				<input type="submit" value="logout">
 			</div>
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
-				<form action="<? echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
+				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
 				<input type="submit" value="login">
 			</div>
 		</div>

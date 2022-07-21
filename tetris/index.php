@@ -24,7 +24,8 @@
 		</ul>
 		<div id="main">
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-			Name: <input type="text" name="fname">
+			<label for="fname">First Name: </label><br>
+			<input type="text" id="fname" name="fname" value="First Name"><br>
 			</form>
 		</div>
 	</body>

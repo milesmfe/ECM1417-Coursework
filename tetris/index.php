@@ -10,10 +10,10 @@
 
 	$sql = "INSERT INTO Users VALUES ('unTest', 'fnTest', 'lnTest', 'pwTest', 1)";
 
-	if (mysqli_query($conn, $sql)) {
+	if (mysqli_query($link, $sql)) {
 		echo "New user successfully created.";
 	} else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		echo "Error: " . $sql . "<br>" . mysqli_error($link);
 	}
 
 	?>

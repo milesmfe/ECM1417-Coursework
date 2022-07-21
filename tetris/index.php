@@ -6,11 +6,16 @@
 
 	<?php
 
-	require_once "config.php";
-
-	$sql = "DELETE FROM Users";
-	mysqli_query($conn, $sql);
-
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$auth_test = $_POST['auth_test'];
+		if ($auth_test == "logout") {
+			$_SESSION["auth"] = false;
+		} 
+		if ($auth_test == "login") {
+			$_SESSION["auth"] = true;
+		}
+	  }
+	
 	?>
 
 	</head>
@@ -20,6 +25,17 @@
 			<li name="tetris" style="float:right"><a href="tetris.php">Play Tetris</a></li>
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
-		<div id="main"></div>
+		<div id="main">
+			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
+				<!-- Logged in -->
+				<form action="<? echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
+				<input type="submit" value="logout">
+			</div>
+			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
+				<!-- Logged Out -->
+				<form action="<? echo $_SERVER["PHP_SELF"]; ?>" method="post"></form>
+				<input type="submit" value="login">
+			</div>
+		</div>
 	</body>
 </html>

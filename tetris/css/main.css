@@ -40,3 +40,7 @@ div#main {
     background-position:center, center;
     background-repeat:no-repeat;
 }
+
+div.landing {
+    align-self: center;
+}

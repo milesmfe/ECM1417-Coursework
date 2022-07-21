@@ -10,6 +10,6 @@
 			<li name="tetris" style="float:right"><a href="tetris.php">Play Tetris</a></li>
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
-		<div id="main"></div>
+		<div style="height:100%" id="main"></div>
 	</body>
 </html>

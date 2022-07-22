@@ -25,7 +25,7 @@ li a {
 }
 
 li a:hover:not(.current) {
-    background:darkslategrey;
+    background:dimgray;
 }
 
 li a.current {
@@ -43,4 +43,9 @@ div#main {
 
 div.landing {
     align-self: center;
+    height:100%;
+}
+
+div.error {
+    color: red;
 }

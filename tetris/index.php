@@ -11,7 +11,7 @@
 		
 		// Define variables and initialize with empty values
 		$username = $password = "";
-		$username_err = $password_err = $login_err = "";
+		$username_error = $password_error = $login_error = "";
 		
 		// Processing form data when form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -6,6 +6,7 @@ ul {
     background-color: blue;
     top: 0;
     width: 100%;
+    max-width: 100%;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -42,8 +43,20 @@ div#main {
 }
 
 div.landing {
-    align-self: center;
     height:100%;
+    width: 100%;
+}
+
+div.user-form {
+    height:50%;
+    width: 60%;
+    margin: auto;
+    padding: 10px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    box-shadow: 5px 5px 10px;
 }
 
 div.error {

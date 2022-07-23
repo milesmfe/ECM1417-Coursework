@@ -3,7 +3,7 @@
 	<head>
 		<title>Tetris Homepage</title>
 		<link rel="stylesheet" media="screen" href = "css/main.css">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 			
 		// Include config file
@@ -100,6 +100,7 @@
 			</div>
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
+				<div class="user-form">
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below.</p>
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
@@ -113,6 +114,7 @@
 					<input type="submit" value="Login">
 					<p>Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
+				</div>
 			</div>		
 		</div>
 	</body>

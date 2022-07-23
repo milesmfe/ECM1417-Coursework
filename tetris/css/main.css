@@ -1,12 +1,12 @@
 html, body {
     height: 100%;
+    margin: auto;
 }
 
 ul {
     background-color: blue;
     top: 0;
     width: 100%;
-    max-width: 100%;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -35,16 +35,10 @@ li a.current {
 }
 
 div#main {
-    height:100%;
     background-image: url('../images/tetris.png');
     background-size: 90% contain;
     background-position:center, center;
     background-repeat:no-repeat;
-}
-
-div.landing {
-    height:100%;
-    width: 100%;
 }
 
 div.user-form {

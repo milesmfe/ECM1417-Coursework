@@ -104,7 +104,7 @@
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below.</p>
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
-				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 					<label for="username">Username</label>
 					<input type="text" name="username" value="<?php echo $username; ?>">
 					<span><?php echo $username_error ?></span>
@@ -112,7 +112,7 @@
 					<input type="text" name="password" value="<?php echo $password; ?>">
 					<span><?php echo $password_error ?></span>
 					<input type="submit" value="Login">
-					<p>Don't have a user account? <a href="register.php">Register now</a></p>
+					<p style="float:bottom">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
 				</div>
 			</div>		

@@ -48,14 +48,18 @@ div.landing {
 
 div.user-form {
     height:50%;
-    width: 60%;
+    width: 30%;
     margin: auto;
     padding: 10px 10px;
+    text-align: center;
+    background-color: lightgray;
+    box-shadow: 5px 5px 10px;
+}
+
+form.login {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
-    box-shadow: 5px 5px 10px;
 }
 
 div.error {

@@ -35,10 +35,15 @@ li a.current {
 }
 
 div#main {
+    height: 100%;
     background-image: url('../images/tetris.png');
     background-size: 90% contain;
     background-position:center, center;
     background-repeat:no-repeat;
+}
+
+div.landing {
+    height: 100%;
 }
 
 div.user-form {

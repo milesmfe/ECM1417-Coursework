@@ -105,11 +105,11 @@
 				<p>Please login by entering your username and password below.</p>
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-				<div>
+				<div class="form-item">
 					<label for="username">Username</label>
 					<input type="text" name="username" value="<?php echo $username; ?>">
 				</div>	
-				<div>
+				<div class="form-item">
 					<label for="password">Password</label>
 					<input type="text" name="password" value="<?php echo $password; ?>">
 				</div>

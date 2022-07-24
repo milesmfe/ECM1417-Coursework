@@ -57,12 +57,16 @@ div.user-form {
     box-shadow: 5px 5px 10px;
 }
 
+div.form-item {
+    width: 100%;
+}
+
 #login-btn {
     width: 100%;
 }
 
 #no-user-msg {
-    margin-top: auto;
+    -ms-flex-align:baseline;
 }
 
 .error {

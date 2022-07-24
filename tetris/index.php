@@ -11,7 +11,7 @@
 		
 		// Define variables and initialize with empty values
 		$username = $password = "";
-		$username_error = $password_error = $login_error = "TEEESTING";
+		$username_error = $password_error = $login_error = "";
 		
 		// Processing form data when form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -106,9 +106,9 @@
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-				<span class="error"><?php echo $username_error ?></span>
 				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">
-				<span class="error"><?php echo $password_error ?></span>
+				<p class="error"><?php echo $username_error ?></p>
+				<p class="error"><?php echo $password_error ?></p>
 				<input id="login-btn" type="submit" value="Login">
 				<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>

@@ -53,6 +53,7 @@ div.content-box {
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: auto;
     background-color: lightgray;
     box-shadow: 5px 5px 10px;
 }

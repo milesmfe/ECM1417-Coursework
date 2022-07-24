@@ -9,11 +9,11 @@
 		// Include config file
 		require_once "config.php";
 		
-		// Define variables and initialize with empty values
+		// Define variables and initialise as empty strings
 		$username = $password = "";
 		$username_err = $password_err = $login_err = "";
 
-		// Processing form data when form is submitted
+		// Process user data from form follwing submission
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 			// Check if username is empty
@@ -30,57 +30,54 @@
 				$password = trim($_POST["password"]);
 			}
 			
-			// Validate credentials
+			// Validate credentials against database
 			if (empty($username_err) && empty($password_err)) {
-				// Prepare a select statement
+				// Prepare sql statement
 				$sql = "SELECT username, password FROM Users WHERE username = ?";
 				
 				if ($stmt = mysqli_prepare($conn, $sql)) {
-					// Bind variables to the prepared statement as parameters
+					// Bind username to sql statement as a paramater and set its value
 					mysqli_stmt_bind_param($stmt, "s", $param_username);
-					
-					// Set parameters
 					$param_username = $username;
 					
-					// Attempt to execute the prepared statement
+					// Attempt to execute prepared sql statement
 					if (mysqli_stmt_execute($stmt)) {
 						// Store result
 						mysqli_stmt_store_result($stmt);
 						
-						// Check if username exists, if yes then verify password
+						// Check if username exists
 						if (mysqli_stmt_num_rows($stmt) == 1) {                    
 							// Bind result variables
 							mysqli_stmt_bind_result($stmt, $username, $hashed_password);
 							if (mysqli_stmt_fetch($stmt)) {
+								// Check if password is correct
 								if (password_verify($password, $hashed_password)) {
-									// Password is correct, so start a new session
+									// Credentials valid
 									session_start();
 									
 									// Store data in session variables
 									$_SESSION["auth"] = true;
 									$_SESSION["username"] = $username;                            
 									
+									// Reload the page
 									header($_SERVER["PHP_SELF"]);
 
 								} else {
-									// Password is not valid, display a generic error message
+									// Password invalid
 									$login_err = "Invalid username or password.";
 								}
 							}
 						} else {
-							// Username doesn't exist, display a generic error message
+							// Username doesn't exist
 							$login_err = "Invalid username or password.";
 						}
 					} else {
+						// Failed to execute sql statement
 						echo "Something went wrong. Please try again later.";
 					}
-
-					// Close statement
 					mysqli_stmt_close($stmt);
 				}
 			}
-			
-			// Close connection
 			mysqli_close($conn);
 		}
 
@@ -88,14 +85,17 @@
 
 	</head>
 	<body>
+		<!--Navbar-->
 		<ul>
 			<li name="home" style="float:left"><a class="current" href="index.php">Home</a></li>
 			<li name="tetris" style="float:right"><a href="tetris.php">Play Tetris</a></li>
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
+		<!--Main content with Tetris background image-->
 		<div id="main">
+			<!--Show correct landing content according to login status-->
 			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
-				<!-- Logged in -->
+				<!--Logged in-->
 				<div class="content-box">
 					<h1>Welcome to Tetris!</h1>
 					<p>Logged in as: <span style="color:blue"><?php echo $_SESSION["username"]; ?></span></p>
@@ -103,7 +103,7 @@
 				</div>
 			</div>
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
-				<!-- Logged Out -->
+				<!--Logged out-->
 				<div class="content-box">
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>

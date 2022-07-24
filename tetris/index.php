@@ -12,6 +12,8 @@
 		// Define variables and initialize with empty values
 		$username = $password = "";
 		$username_err = $password_err = $login_err = "";
+
+		echo "<script>console.log('" . password_hash("test", PASSWORD_DEFAULT) . "')</script>";
 		
 		// Processing form data when form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -101,7 +103,6 @@
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
 				<div class="user-form">
-				<p><?php echo password_hash("test"); ?></p>
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>
 				<?php if (!empty($login_err)) { echo '<div class="error">' . $login_err . '</div>'; } ?>

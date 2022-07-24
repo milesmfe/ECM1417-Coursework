@@ -60,6 +60,7 @@ div.user-form {
 input {
     min-height: 38px;
     border-radius: 2px;
+    width: 100%;
 }
 
 #login-btn {

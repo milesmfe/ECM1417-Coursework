@@ -5,7 +5,7 @@
 		<link rel="stylesheet" media="screen" href = "css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
-	
+
 		// Include config file
 		require_once "config.php";
 		
@@ -96,16 +96,21 @@
 		<div id="main">
 			<div class="landing" <?php if ($_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged in -->
+				<div class="content-box">
+					<h1>Welcome to Tetris!</h1>
+					<p>Logged in as: <?php echo $_SESSION["username"]; ?></p>
+					<a href="tetris.php"><button>Click here to play</button></a>
+				</div>
 			</div>
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
-				<div class="user-form">
+				<div class="content-box">
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>
 				<?php if (!empty($login_err)) { echo '<div class="error">' . $login_err . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">
+				<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
+				<input type="text" name="password" placeholder="password" value="<?php echo $password; ?>">
 				<input id="login-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>				

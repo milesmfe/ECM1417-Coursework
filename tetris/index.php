@@ -12,9 +12,7 @@
 		// Define variables and initialize with empty values
 		$username = $password = "";
 		$username_err = $password_err = $login_err = "";
-
-		echo "<script>console.log('" . password_hash("test", PASSWORD_DEFAULT) . "')</script>";
-		
+				
 		// Processing form data when form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		

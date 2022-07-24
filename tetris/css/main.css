@@ -58,7 +58,9 @@ div.user-form {
 }
 
 input {
-    min-height: 38px;
+    display: block;
+    margin-bottom: 20px;
+    min-height: 40px;
     border-radius: 2px;
     width: 100%;
 }

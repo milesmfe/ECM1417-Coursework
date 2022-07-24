@@ -59,6 +59,8 @@ div.user-form {
 
 div.form-item {
     width: 100%;
+    border-width: 5px;
+    border-color: black;
 }
 
 #login-btn {
@@ -66,7 +68,7 @@ div.form-item {
 }
 
 #no-user-msg {
-    -ms-flex-align:baseline;
+    align-self: baseline;
 }
 
 .error {

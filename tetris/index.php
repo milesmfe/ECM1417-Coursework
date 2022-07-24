@@ -102,9 +102,8 @@
 				<!-- Logged Out -->
 				<div class="user-form">
 				<h1>Login</h1>
-				<p>Please login by entering your username and password below.</p>
+				<p>Please login by entering your username and password below:</p>
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
-				
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
 				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">
@@ -113,7 +112,6 @@
 				<input id="login-btn" type="submit" value="Login">
 				<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
-				
 			</div>
 			</div>		
 		</div>

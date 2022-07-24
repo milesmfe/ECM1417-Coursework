@@ -3,9 +3,6 @@
 	<head>
 		<title>Play Tetris</title>
 		<link rel="stylesheet" href = "css/main.css">
-
-		<?php echo "<script>console.log(" . $_SESSION["username"] . ")</script>" ?>
-
 	</head>
 	<body>
 		<ul>

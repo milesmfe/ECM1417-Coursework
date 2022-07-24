@@ -104,21 +104,17 @@
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below.</p>
 				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
+				
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-				<div class="form-item">
-					<label for="username">Username</label>
-					<input type="text" name="username" value="<?php echo $username; ?>">
-				</div>	
-				<div class="form-item">
-					<label for="password">Password</label>
-					<input type="text" name="password" value="<?php echo $password; ?>">
-				</div>
-					<span class="error"><?php echo $username_error ?></span>
-					<span class="error"><?php echo $password_error ?></span>
-					<input id="login-btn" type="submit" value="Login">
-					<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
+				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">
+				<span class="error"><?php echo $username_error ?></span>
+				<span class="error"><?php echo $password_error ?></span>
+				<input id="login-btn" type="submit" value="Login">
+				<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
-				</div>
+				
+			</div>
 			</div>		
 		</div>
 	</body>

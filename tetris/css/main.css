@@ -57,14 +57,14 @@ div.user-form {
     box-shadow: 5px 5px 10px;
 }
 
-div.form-item {
-    width: 100%;
-    border-width: 5px;
-    border-color: black;
+input {
+    min-height: 38px;
+    border-radius: 2px;
 }
 
 #login-btn {
     width: 100%;
+    font-weight: bold;
 }
 
 #no-user-msg {

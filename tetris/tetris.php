@@ -4,7 +4,7 @@
 		<title>Play Tetris</title>
 		<link rel="stylesheet" href = "css/main.css">
 
-		<?php echo "console.log('" . $_SESSION["username"] . "')" ?>
+		<?php echo "<script>console.log(" . $_SESSION["username"] . ")</script>" ?>
 
 	</head>
 	<body>

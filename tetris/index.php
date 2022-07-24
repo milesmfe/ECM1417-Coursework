@@ -107,18 +107,16 @@
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<div>
 					<label for="username">Username</label>
-					<input type="text" name="username" value="<?php echo $username; ?>" placeholder="username">
+					<input type="text" name="username" value="<?php echo $username; ?>">
 				</div>	
 				<div>
 					<label for="password">Password</label>
-					<input type="text" name="password" value="<?php echo $password; ?>" placeholder="password">
+					<input type="text" name="password" value="<?php echo $password; ?>">
 				</div>
 					<span class="error"><?php echo $username_error ?></span>
 					<span class="error"><?php echo $password_error ?></span>
 					<input type="submit" value="Login">
-					<div style="margin-top:auto">
-						<p>Don't have a user account? <a href="register.php">Register now</a></p>
-					</div>
+					<p style="margin-top:auto">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
 				</div>
 			</div>		

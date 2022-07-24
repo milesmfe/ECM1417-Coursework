@@ -4,7 +4,7 @@
 		<title>Tetris Homepage</title>
 		<link rel="stylesheet" media="screen" href = "css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php
+		<?php
 
 		// Include config file
 		require_once "config.php";
@@ -81,8 +81,7 @@
 			mysqli_close($conn);
 		}
 
-	?>
-
+		?>
 	</head>
 	<body>
 		<!--Navbar-->

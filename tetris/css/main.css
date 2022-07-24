@@ -57,6 +57,14 @@ div.user-form {
     box-shadow: 5px 5px 10px;
 }
 
+#login-btn {
+    width: 100%;
+}
+
+#no-user-msg {
+    margin-top: auto;
+}
+
 .error {
     color: red;
 }

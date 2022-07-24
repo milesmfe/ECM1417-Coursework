@@ -115,8 +115,8 @@
 				</div>
 					<span class="error"><?php echo $username_error ?></span>
 					<span class="error"><?php echo $password_error ?></span>
-					<input style="width=100%" type="submit" value="Login">
-					<p style="margin-top:auto">Don't have a user account? <a href="register.php">Register now</a></p>
+					<input id="login-btn" type="submit" value="Login">
+					<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
 				</div>
 			</div>		

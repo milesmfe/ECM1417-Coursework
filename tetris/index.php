@@ -98,7 +98,7 @@
 				<!-- Logged in -->
 				<div class="content-box">
 					<h1>Welcome to Tetris!</h1>
-					<p>Logged in as: <?php echo $_SESSION["username"]; ?></p>
+					<p>Logged in as: <span style="color:blue"><?php echo $_SESSION["username"]; ?></span></p>
 					<a href="tetris.php"><button>Click here to play</button></a>
 				</div>
 			</div>

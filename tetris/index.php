@@ -11,7 +11,7 @@
 		
 		// Define variables and initialize with empty values
 		$username = $password = "";
-		$username_error = $password_error = $login_error = "";
+		$username_err = $password_err = $login_err = "";
 		
 		// Processing form data when form is submitted
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -103,12 +103,12 @@
 				<div class="user-form">
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>
-				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
+				<?php if (!empty($login_err)) { echo '<div class="error">' . $login_err . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
 				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">
-				<?php if (!empty($username_error)) { echo '<div class="error">' . $username_error . '</div>'; } ?>
-				<?php if (!empty($password_error)) { echo '<div class="error">' . $password_error . '</div>'; } ?>				
+				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
+				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>				
 				<input id="login-btn" type="submit" value="Login">
 				<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>

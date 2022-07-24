@@ -33,7 +33,7 @@
 			// Validate credentials
 			if (empty($username_err) && empty($password_err)) {
 				// Prepare a select statement
-				$sql = "SELECT id, username, password FROM Users WHERE username = ?";
+				$sql = "SELECT username, password FROM Users WHERE username = ?";
 				
 				if ($stmt = mysqli_prepare($conn, $sql)) {
 					// Bind variables to the prepared statement as parameters
@@ -101,6 +101,7 @@
 			<div class="landing" <?php if (!$_SESSION['auth']) { ?>style="display: flex"<?php } else { ?>style="display:none"<?php } ?>>
 				<!-- Logged Out -->
 				<div class="user-form">
+				<?php echo password_hash("test"); ?>
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>
 				<?php if (!empty($login_err)) { echo '<div class="error">' . $login_err . '</div>'; } ?>

@@ -103,7 +103,7 @@
 				<div class="user-form">
 				<h1>Login</h1>
 				<p>Please login by entering your username and password below:</p>
-				<?php if (!empty($login_error)) { echo '<div class="error">' . $login_error . '</div>'; } ?>
+				<?php if (1==1) { echo '<div class="error">' . "ERROR TESTING" . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
 				<input type="text" name="password" placeholder="Password" value="<?php echo $password; ?>">

@@ -122,23 +122,25 @@
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
 		<div id="main">
-			<div class="content-box">
-			<h1>Register</h1>
-			<p>Please register by entering your details below:</p>
-			<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-			<input type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
-			<input type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
-			<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
-			<input type="text" name="password" placeholder="password" value="">
-			<input type="text" name="confirm_password" placeholder="confirm password" value="">
-			<input id="login-btn" type="submit" value="Login">
-			<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
-			<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		
-			<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		
-			<?php if (!empty($first_name_err)) { echo '<div class="error">' . $first_name_err . '</div>'; } ?>
-			<?php if (!empty($last_name_err)) { echo '<div class="error">' . $last_name_err . '</div>'; } ?>				
-			<p id="no-user-msg">Already have a user account? <a href="index.php">Login</a></p>
-			</form>
+			<div class="landing">
+				<div class="content-box">
+				<h1>Register</h1>
+				<p>Please register by entering your details below:</p>
+				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+				<input type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
+				<input type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
+				<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
+				<input type="text" name="password" placeholder="password" value="">
+				<input type="text" name="confirm_password" placeholder="confirm password" value="">
+				<input id="login-btn" type="submit" value="Login">
+				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
+				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		
+				<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		
+				<?php if (!empty($first_name_err)) { echo '<div class="error">' . $first_name_err . '</div>'; } ?>
+				<?php if (!empty($last_name_err)) { echo '<div class="error">' . $last_name_err . '</div>'; } ?>				
+				<p id="no-user-msg">Already have a user account? <a href="index.php">Login</a></p>
+				</form>
+				</div>
 			</div>
 		</div>
 	</body>

@@ -41,6 +41,7 @@ div#main {
 
 div.landing {
     height: 100%;
+    display: flex;
 }
 
 div.content-box {

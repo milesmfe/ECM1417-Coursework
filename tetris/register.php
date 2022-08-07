@@ -88,8 +88,6 @@
 				// Prepare an insert statement
 				$sql = "INSERT INTO Users (username, password, firstname, lastname, display) VALUES (?, ?, ?, ?, ?)";
 				
-				$register_err = $_POST["display"];
-
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
 					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_password, $param_first_name, $param_last_name, $param_display);

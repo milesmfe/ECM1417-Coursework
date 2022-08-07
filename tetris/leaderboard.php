@@ -62,6 +62,8 @@
 				<div class="content-box">
 					<h1>Leaderboard</h1>
 					<div class="grid">
+						<div class="box">Username</div>
+						<div class="box">Score</div>
 						<?php if (!empty($player1_name)) { echo '<div class="box" style="background:goldenrod">' . $player1_name . '</div>'; } ?>
 						<?php if (!empty($player1_name)) { echo '<div class="box" style="background:goldenrod">' . $player1_score . '</div>'; } ?>
 						<?php if (!empty($player2_name)) { echo '<div class="box" style="background:white">' . $player2_name . '</div>'; } ?>

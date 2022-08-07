@@ -86,3 +86,8 @@ form input.large {
     color: red;
     margin-bottom:5px;
 }
+
+.leaderboard {
+    justify-content: left;
+    align-items: center;
+}

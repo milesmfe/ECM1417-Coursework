@@ -61,9 +61,9 @@
 			<div class="landing">
 				<div class="content-box">
 					<h1>Leaderboard</h1>
-					<?php if (!empty($player1_name)) { echo '<div class="leaderboard"> style="background:goldenrod"' . $player1_name . ': ' . $player1_score .'</div>'; } ?>
-					<?php if (!empty($player2_name)) { echo '<div class="leaderboard"> style="background:#C0C0C0"' . $player2_name . ': ' . $player2_score .'</div>'; } ?>
-					<?php if (!empty($player3_name)) { echo '<div class="leaderboard"> style="background:#cd7f32"' . $player3_name . ': ' . $player3_score .'</div>'; } ?>
+					<?php if (!empty($player1_name)) { echo '<div class="leaderboard" style="background:goldenrod">' . $player1_name . ': ' . $player1_score .'</div>'; } ?>
+					<?php if (!empty($player2_name)) { echo '<div class="leaderboard" style="background:#C0C0C0">' . $player2_name . ': ' . $player2_score .'</div>'; } ?>
+					<?php if (!empty($player3_name)) { echo '<div class="leaderboard" style="background:#cd7f32">' . $player3_name . ': ' . $player3_score .'</div>'; } ?>
 					<?php if (!empty($player4_name)) { echo '<div class="leaderboard">' . $player4_name . ': ' . $player4_score .'</div>'; } ?>
 					<?php if (!empty($player5_name)) { echo '<div class="leaderboard">' . $player5_name . ': ' . $player5_score .'</div>'; } ?>
 				</div>

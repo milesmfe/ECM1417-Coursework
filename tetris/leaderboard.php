@@ -24,14 +24,27 @@
 		if ($stmt = mysqli_prepare($conn, $sql)) {
 			// Attempt to execute prepared sql statement
 			if (mysqli_stmt_execute($stmt)) {
-				
 				mysqli_stmt_bind_result($stmt, $username, $score);
-				mysqli_stmt_fetch($stmt);
-				$player1_name = $username;
-				$player1_score = $score;
-				mysqli_stmt_fetch($stmt);
-				$player2_name = $username;
-				$player2_score = $score;
+				if (mysqli_stmt_fetch($stmt)) {
+					$player1_name = $username;
+					$player1_score = $score;
+				}
+				if (mysqli_stmt_fetch($stmt)) {
+					$player2_name = $username;
+					$player2_score = $score;
+				}
+				if (mysqli_stmt_fetch($stmt)) {
+					$player3_name = $username;
+					$player3_score = $score;
+				}
+				if (mysqli_stmt_fetch($stmt)) {
+					$player4_name = $username;
+					$player4_score = $score;
+				}
+				if (mysqli_stmt_fetch($stmt)) {
+					$player5_name = $username;
+					$player5_score = $score;
+				}
 			}
 		}
 		mysqli_stmt_close($stmt);

@@ -65,11 +65,11 @@
 						<div class="box">Username</div>
 						<div class="box">Score</div>
 						<?php if (!empty($player1_name)) { echo '<div class="box" style="background:goldenrod">' . $player1_name . '</div>'; } ?>
-						<?php if (!empty($player1_name)) { echo '<div class="box" style="background:goldenrod">' . $player1_score . '</div>'; } ?>
+						<?php if (!empty($player1_name)) { echo '<div class="box">' . $player1_score . '</div>'; } ?>
 						<?php if (!empty($player2_name)) { echo '<div class="box" style="background:white">' . $player2_name . '</div>'; } ?>
-						<?php if (!empty($player2_name)) { echo '<div class="box" style="background:white">' . $player2_score . '</div>'; } ?>
+						<?php if (!empty($player2_name)) { echo '<div class="box">' . $player2_score . '</div>'; } ?>
 						<?php if (!empty($player3_name)) { echo '<div class="box" style="background:#cd7f32">' . $player3_name . '</div>'; } ?>
-						<?php if (!empty($player3_name)) { echo '<div class="box" style="background:#cd7f32">' . $player3_score . '</div>'; } ?>
+						<?php if (!empty($player3_name)) { echo '<div class="box">' . $player3_score . '</div>'; } ?>
 						<?php if (!empty($player4_name)) { echo '<div class="box">' . $player4_name . '</div>'; } ?>
 						<?php if (!empty($player4_name)) { echo '<div class="box">' . $player4_score . '</div>'; } ?>
 						<?php if (!empty($player5_name)) { echo '<div class="box">' . $player5_name . '</div>'; } ?>

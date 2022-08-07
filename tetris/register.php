@@ -18,18 +18,16 @@
 		
 			// Check if username is valid
 			if (empty(trim($_POST["username"]))) {
-				$username_err = "Please enter a username.";
+				$username_err = "Username cannot be blank.";
 			} elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
-				$username_err = "Username can only contain letters, numbers, and underscores.";
+				$username_err = "Username may only contain letters, numbers, and underscores.";
 			} else {
 				// Prepare a select statement
-				$sql = "SELECT id FROM users WHERE username = ?";
+				$sql = "SELECT id FROM Users WHERE username = ?";
 				
 				if ($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
 					mysqli_stmt_bind_param($stmt, "s", $param_username);
-					
-					// Set parameters
 					$param_username = trim($_POST["username"]);
 					
 					// Attempt to execute the prepared statement
@@ -38,12 +36,12 @@
 						mysqli_stmt_store_result($stmt);
 						
 						if (mysqli_stmt_num_rows($stmt) == 1) {
-							$username_err = "This username is already taken.";
+							$username_err = "Username taken.";
 						} else {
 							$username = trim($_POST["username"]);
 						}
 					} else {
-						echo "Oops! Something went wrong. Please try again later.";
+						echo "Something went wrong. Please try again later.";
 					}
 
 					// Close statement
@@ -69,27 +67,41 @@
 					$confirm_password_err = "Password did not match.";
 				}
 			}
+
+			// Check if first name is valid
+			if (empty(trim($_POST["first_name"]))) {
+				$first_name_err = "Please enter your first name.";
+			} elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["first_name"]))) {
+				$first_name_err = "Please enter a valid first name.";
+			}
+
+			// Check if last name is valid
+			if (empty(trim($_POST["last_name"]))) {
+				$last_name_err = "Please enter your last name.";
+			} elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["last_name"]))) {
+				$last_name_err = "Please enter a valid last name.";
+			}
 			
 			// Check input errors before inserting in database
-			if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
+			if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($first_name_err) && empty($last_name_err)) {
 				
 				// Prepare an insert statement
-				$sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+				$sql = "INSERT INTO Users (username, password, firstname, lastname) VALUES (?, ?, ?, ?)";
 				
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
-					mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
-					
-					// Set parameters
+					mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_first_name, $param_last_name);
 					$param_username = $username;
 					$param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+					$param_first_name = $first_name;
+					$param_last_name = $last_name;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {
-						// Redirect to login page
-						header("location: login.php");
+						// Redirect to home page
+						header("location: index.php");
 					} else {
-						echo "Oops! Something went wrong. Please try again later.";
+						echo "Something went wrong. Please try again later.";
 					}
 
 					// Close statement
@@ -109,6 +121,25 @@
 			<li name="tetris" style="float:right"><a href="tetris.php">Play Tetris</a></li>
 			<li name="leaderboard" style="float:right"><a href="leaderboard.php">Leaderboard</a></li>
 		</ul>
-		<div id="main"></div>
+		<div id="main">
+			<div class="content-box">
+			<h1>Register</h1>
+			<p>Please register by entering your details below:</p>
+			<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+			<input type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
+			<input type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
+			<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
+			<input type="text" name="password" placeholder="password" value="">
+			<input type="text" name="confirm_password" placeholder="confirm password" value="">
+			<input id="login-btn" type="submit" value="Login">
+			<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
+			<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		
+			<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		
+			<?php if (!empty($first_name_err)) { echo '<div class="error">' . $first_name_err . '</div>'; } ?>
+			<?php if (!empty($last_name_err)) { echo '<div class="error">' . $last_name_err . '</div>'; } ?>				
+			<p id="no-user-msg">Already have a user account? <a href="index.php">Login</a></p>
+			</form>
+			</div>
+		</div>
 	</body>
 </html>

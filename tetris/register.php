@@ -129,14 +129,14 @@
 				<p>Please register by entering your details below:</p>
 				<?php if (!empty($register_err)) { echo '<div class="error">' . $register_err . '</div>'; } ?>
 				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-				<input type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
-				<input type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
-				<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
-				<input type="text" name="password" placeholder="password" value="">
-				<input type="text" name="confirm_password" placeholder="confirm password" value="">
+				<input class="large" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
+				<input class="large" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
+				<input class="large" type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
+				<input class="large" type="text" name="password" placeholder="password" value="">
+				<input class="large" type="text" name="confirm_password" placeholder="confirm password" value="">
 				<label>Display scores on leaderboard</label>
 				<label for="yes">Yes
-				<input type="radio" id="yes" name="display" value="yes">
+				<input type="radio" id="yes" name="display" value="yes" checked="checked">
 				</label>
 				<label for="no">No
 				<input type="radio" id="no" name="display" value="no">

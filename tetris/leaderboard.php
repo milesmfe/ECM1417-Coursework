@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Leaderboard</title>
-		<link rel="stylesheet" href = "css/main.css">
+		<link rel="stylesheet" media="screen" href = "css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php
 

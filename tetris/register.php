@@ -88,7 +88,7 @@
 				// Prepare an insert statement
 				$sql = "INSERT INTO Users (username, password, firstname, lastname, display) VALUES (?, ?, ?, ?, ?)";
 				
-				$register_err = $sql;
+				$register_err = $_POST["display"];
 
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
@@ -98,8 +98,6 @@
 					$param_first_name = $first_name;
 					$param_last_name = $last_name;
 					$param_display = $_POST["display"] == "yes" ? 1 : 0;
-
-					$register_err = $sql;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {

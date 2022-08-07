@@ -89,7 +89,7 @@
 				$sql = "INSERT INTO Users VALUES (?, ?, ?, ?, ?);
 				";
 				
-				if($stmt = mysqli_prepare($link, $sql)) {
+				if($stmt = mysqli_prepare($conn, $sql)) {
 					// Bind variables to the prepared statement as parameters
 					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_first_name, $param_last_name, $param_password, $param_display);
 					$param_username = $username;

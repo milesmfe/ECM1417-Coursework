@@ -115,7 +115,7 @@
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>				
 				<p id="no-user-msg">Don't have a user account? <a href="register.php">Register now</a></p>
 				</form>
-			</div>
+				</div>
 			</div>		
 		</div>
 	</body>

@@ -49,22 +49,29 @@ div.content-box {
     width: 30%;
     margin: auto;
     padding: 10px 10px;
-    display: block;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     overflow: auto;
     background-color: #c7c7c7;
     box-shadow: 5px 5px 10px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
 form input.large {
     display: block;
-    margin-bottom: 10px;
     min-height: 40px;
     border-radius: 2px;
-    width: 75%;
+    width: 100%;
 }
 
 #submit-btn {

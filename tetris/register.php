@@ -95,7 +95,7 @@
 					$param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 					$param_first_name = $first_name;
 					$param_last_name = $last_name;
-					$param_display = 1;
+					$param_display = $_POST["display"] == "yes" ? 1 : 0;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {
@@ -134,6 +134,8 @@
 				<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
 				<input type="text" name="password" placeholder="password" value="">
 				<input type="text" name="confirm_password" placeholder="confirm password" value="">
+				<input type="radio" name="display" value="yes">
+				<input type="radio" name="display" value="no">
 				<input id="login-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		

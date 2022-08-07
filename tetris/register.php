@@ -141,7 +141,7 @@
 				<label for="no">No
 				<input type="radio" id="no" name="display" value="no">
 				</label>
-				<input id="login-btn" type="submit" value="Login">
+				<input class="large" id="submit-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		
 				<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		

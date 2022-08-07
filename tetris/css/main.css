@@ -64,11 +64,10 @@ form input.large {
     margin-bottom: 10px;
     min-height: 40px;
     border-radius: 2px;
-    width: 100%;
+    width: 75%;
 }
 
-#login-btn {
-    width: 100%;
+#submit-btn {
     font-weight: bold;
 }
 

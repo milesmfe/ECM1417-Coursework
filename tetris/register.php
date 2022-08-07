@@ -88,6 +88,8 @@
 				// Prepare an insert statement
 				$sql = "INSERT INTO Users (username, password, firstname, lastname, display) VALUES (?, ?, ?, ?, ?)";
 				
+				$register_err = $sql;
+
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
 					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_password, $param_first_name, $param_last_name, $param_display);
@@ -97,7 +99,7 @@
 					$param_last_name = $last_name;
 					$param_display = $_POST["display"] == "yes" ? 1 : 0;
 
-					$register_err = $stmt;
+					$register_err = $sql;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {
@@ -130,7 +132,6 @@
 				<h1>Register</h1>
 				<p>Please register by entering your details below:</p>
 				<?php if (!empty($register_err)) { echo '<div class="error">' . $register_err . '</div>'; } ?>
-				<?php echo '<div class="error">' . $register_err . '</div>'; ?>
 				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input class="large" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
 				<input class="large" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">

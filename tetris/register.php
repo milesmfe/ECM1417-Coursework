@@ -73,6 +73,8 @@
 				$first_name_err = "Please enter your first name.";
 			} elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["first_name"]))) {
 				$first_name_err = "Please enter a valid first name.";
+			} else {
+				$first_name = trim($_POST["first_name"]);
 			}
 
 			// Check if last name is valid
@@ -80,6 +82,8 @@
 				$last_name_err = "Please enter your last name.";
 			} elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["last_name"]))) {
 				$last_name_err = "Please enter a valid last name.";
+			} else {
+				$last_name = trim($_POST["last_name"]);
 			}
 			
 			// Check input errors before inserting in database

@@ -86,11 +86,12 @@
 			if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($first_name_err) && empty($last_name_err)) {
 				
 				// Prepare an insert statement
-				$sql = "INSERT INTO Users (username, password, firstname, lastname, display) VALUES (?, ?, ?, ?, ?)";
+				$sql = "INSERT INTO Users VALUES (?, ?, ?, ?, ?);
+				";
 				
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
-					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_password, $param_first_name, $param_last_name, $param_display);
+					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_first_name, $param_last_name, $param_password, $param_display);
 					$param_username = $username;
 					$param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 					$param_first_name = $first_name;
@@ -141,7 +142,7 @@
 				<label for="no">No
 				<input type="radio" id="no" name="display" value="no">
 				</label>
-				<input class="large" id="submit-btn" type="submit" value="Login">
+				<input class="large" id="submit-btn" type="submit" value="Register">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		
 				<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		

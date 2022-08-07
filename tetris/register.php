@@ -128,6 +128,7 @@
 				<h1>Register</h1>
 				<p>Please register by entering your details below:</p>
 				<?php if (!empty($register_err)) { echo '<div class="error">' . $register_err . '</div>'; } ?>
+				<?php echo '<div class="error">' . $register_err . '</div>'; ?>
 				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input class="large" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
 				<input class="large" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">

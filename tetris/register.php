@@ -135,12 +135,12 @@
 				<input type="text" name="password" placeholder="password" value="">
 				<input type="text" name="confirm_password" placeholder="confirm password" value="">
 				<label>Display scores on leaderboard</label>
-				<div>
-				<label for="yes">Yes</label>
+				<label for="yes">Yes
 				<input type="radio" id="yes" name="display" value="yes">
-				<label for="no">No</label>
+				</label>
+				<label for="no">No
 				<input type="radio" id="no" name="display" value="no">
-				</div>
+				</label>
 				<input id="login-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		

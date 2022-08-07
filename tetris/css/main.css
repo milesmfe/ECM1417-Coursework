@@ -69,10 +69,6 @@ div.user-form form {
 form input {
     display: block;
     margin-bottom: 10px;
-}
-
-form input[type=text], form input[type=submit] {
-    
     min-height: 40px;
     border-radius: 2px;
     width: 100%;

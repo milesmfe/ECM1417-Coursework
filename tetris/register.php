@@ -96,6 +96,8 @@
 					$param_first_name = $first_name;
 					$param_last_name = $last_name;
 					$param_display = $_POST["display"] == "yes" ? 1 : 0;
+
+					$register_err = $stmt;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {

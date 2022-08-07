@@ -25,7 +25,7 @@
 				// Prepare a select statement
 				$sql = "SELECT username FROM Users WHERE username = ?";
 				
-				if ($stmt = mysqli_prepare($link, $sql)) {
+				if ($stmt = mysqli_prepare($conn, $sql)) {
 					// Bind variables to the prepared statement as parameters
 					mysqli_stmt_bind_param($stmt, "s", $param_username);
 					$param_username = trim($_POST["username"]);
@@ -112,7 +112,7 @@
 			}
 			
 			// Close connection
-			mysqli_close($link);
+			mysqli_close($conn);
 		}
 
 		?>

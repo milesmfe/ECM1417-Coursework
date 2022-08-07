@@ -66,9 +66,13 @@ div.user-form form {
     flex-direction: column;
 }
 
-form input[type=text] {
+form input {
     display: block;
     margin-bottom: 10px;
+}
+
+form input[type=text], form input[type=submit] {
+    
     min-height: 40px;
     border-radius: 2px;
     width: 100%;

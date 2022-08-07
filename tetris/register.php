@@ -134,8 +134,11 @@
 				<input type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
 				<input type="text" name="password" placeholder="password" value="">
 				<input type="text" name="confirm_password" placeholder="confirm password" value="">
-				<input type="radio" name="display" value="yes">
-				<input type="radio" name="display" value="no">
+				<label>Display scores on leaderboard</label>
+				<label for="yes">Yes</label>
+				<input type="radio" id="yes" name="display" value="yes">
+				<label for="no">No</label>
+				<input type="radio" id="no" name="display" value="no">
 				<input id="login-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>		

@@ -87,7 +87,11 @@ form input.large {
     margin-bottom:5px;
 }
 
-.leaderboard {
-    justify-content: left;
-    align-items: center;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box {
+    font-weight: bold;
 }

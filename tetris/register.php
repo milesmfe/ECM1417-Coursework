@@ -23,7 +23,7 @@
 				$username_err = "Username may only contain letters, numbers, and underscores.";
 			} else {
 				// Prepare a select statement
-				$sql = "SELECT id FROM Users WHERE username = ?";
+				$sql = "SELECT username FROM Users WHERE username = ?";
 				
 				if ($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
@@ -86,15 +86,16 @@
 			if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($first_name_err) && empty($last_name_err)) {
 				
 				// Prepare an insert statement
-				$sql = "INSERT INTO Users (username, password, firstname, lastname) VALUES (?, ?, ?, ?)";
+				$sql = "INSERT INTO Users (username, password, firstname, lastname, display) VALUES (?, ?, ?, ?, ?)";
 				
 				if($stmt = mysqli_prepare($link, $sql)) {
 					// Bind variables to the prepared statement as parameters
-					mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_first_name, $param_last_name);
+					mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_password, $param_first_name, $param_last_name, $param_display);
 					$param_username = $username;
 					$param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 					$param_first_name = $first_name;
 					$param_last_name = $last_name;
+					$param_display = 1;
 					
 					// Attempt to execute the prepared statement
 					if (mysqli_stmt_execute($stmt)) {

@@ -11,7 +11,7 @@
 		
 		// Define variables and initialise as empty string
 		$username = $password = $confirm_password = $first_name = $last_name = "";
-		$username_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = "";
+		$username_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = $register_err = "";
 		
 		// Process user data from form follwing submission
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -102,7 +102,7 @@
 						// Redirect to home page
 						header("location: index.php");
 					} else {
-						echo "Something went wrong. Please try again later.";
+						$register_err = "Something went wrong. Please try again later.";
 					}
 
 					// Close statement
@@ -127,6 +127,7 @@
 				<div class="content-box">
 				<h1>Register</h1>
 				<p>Please register by entering your details below:</p>
+				<?php if (!empty($register_err)) { echo '<div class="error">' . $register_err . '</div>'; } ?>
 				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
 				<input type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">

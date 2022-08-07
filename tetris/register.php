@@ -134,10 +134,10 @@
 				<form class="register" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input class="large" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
 				<input class="large" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
-				<input class="large" type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
-				<input class="large" type="text" name="password" placeholder="password" value="">
-				<input class="large" type="text" name="confirm_password" placeholder="confirm password" value="">
-				<label>Display scores on leaderboard</label>
+				<input class="large" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+				<input class="large" type="text" name="password" placeholder="Password" value="">
+				<input class="large" type="text" name="confirm_password" placeholder="Confirm password" value="">
+				<label>Display Scores on leaderboard</label>
 				<label for="yes">Yes
 				<input type="radio" id="yes" name="display" value="yes" checked="checked">
 				</label>
@@ -150,7 +150,7 @@
 				<?php if (!empty($confirm_password_err)) { echo '<div class="error">' . $confirm_password_err . '</div>'; } ?>		
 				<?php if (!empty($first_name_err)) { echo '<div class="error">' . $first_name_err . '</div>'; } ?>
 				<?php if (!empty($last_name_err)) { echo '<div class="error">' . $last_name_err . '</div>'; } ?>				
-				<p id="no-user-msg">Already have a user account? <a href="index.php">Login</a></p>
+				<p id="no-user-msg">Already have an account? <a href="index.php">Login</a></p>
 				</form>
 				</div>
 			</div>

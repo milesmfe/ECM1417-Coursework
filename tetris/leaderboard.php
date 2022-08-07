@@ -24,13 +24,18 @@
 		if ($stmt = mysqli_prepare($conn, $sql)) {
 			// Attempt to execute prepared sql statement
 			if (mysqli_stmt_execute($stmt)) {
-				// Store result
-				mysqli_stmt_store_result($stmt);
+				
+				mysqli_stmt_bind_result($stmt, $username, $score);
+				mysqli_stmt_fetch($stmt);
+				$player1_name = $username;
+				$player1_score = $score;
+				mysqli_stmt_fetch($stmt);
+				$player2_name = $username;
+				$player2_score = $score;
 			}
 		}
 		mysqli_stmt_close($stmt);
 		mysqli_close($conn);
-
 		?>
 	</head>
 	<body>
@@ -44,6 +49,8 @@
 				<div class="content-box">
 				<?php echo '<div>' . $player1_name . '</div>'; ?>
 				<?php echo '<div>' . $player1_score . '</div>'; ?>
+				<?php echo '<div>' . $player2_name . '</div>'; ?>
+				<?php echo '<div>' . $player2_score . '</div>'; ?>
 				</div>
 			</div>
 		</div>

@@ -109,7 +109,7 @@
 				<?php if (!empty($login_err)) { echo '<div class="error">' . $login_err . '</div>'; } ?>
 				<form class="login" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 				<input class="large" type="text" name="username" placeholder="username" value="<?php echo $username; ?>">
-				<input class="large" type="text" name="password" placeholder="password" value="<?php echo $password; ?>">
+				<input class="large" type="password" name="password" placeholder="password" value="<?php echo $password; ?>">
 				<input class="large" id="submit-btn" type="submit" value="Login">
 				<?php if (!empty($username_err)) { echo '<div class="error">' . $username_err . '</div>'; } ?>
 				<?php if (!empty($password_err)) { echo '<div class="error">' . $password_err . '</div>'; } ?>				

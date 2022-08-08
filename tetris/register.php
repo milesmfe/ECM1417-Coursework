@@ -135,8 +135,8 @@
 				<input class="large" type="text" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>">
 				<input class="large" type="text" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>">
 				<input class="large" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-				<input class="large" type="text" name="password" placeholder="Password" value="">
-				<input class="large" type="text" name="confirm_password" placeholder="Confirm password" value="">
+				<input class="large" type="password" name="password" placeholder="Password" value="">
+				<input class="large" type="password" name="confirm_password" placeholder="Confirm password" value="">
 				<label>Display Scores on leaderboard</label>
 				<label for="yes">Yes
 				<input type="radio" id="yes" name="display" value="yes" checked="checked">
